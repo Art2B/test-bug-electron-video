@@ -1,3 +1,9 @@
+* {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */      
+}
 html, body {
   height: 100%;
   width: 100%;
@@ -66,6 +72,7 @@ footer .lang  span{
   color: white;
   line-height: 64px;
   text-indent: 15px;
+  cursor: pointer;
   text-transform: uppercase;
   background-image: url('/assets/images/lang_bg.png');
   background-repeat: no-repeat;
