@@ -58,13 +58,19 @@ var App = (function(my, Config){
         'height': 360
       });
     });
-  }
+  };
+  my.initBtnGlobalEvents = function(){
+    $(document).on('click', '.btn', function(event) {
+      $(event.target).blur();
+    });
+  };
 
 	my.init = function(){
 		console.log('App init');
     my.generateVideos();
     my.initVideoPlay();
 		my.translationInit();
+    my.initBtnGlobalEvents();
 	};
 	return my;
 }(App || {}, Config || {}));
