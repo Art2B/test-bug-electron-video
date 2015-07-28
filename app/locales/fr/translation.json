@@ -1,6 +1,7 @@
 {
   "app": {
     "langTag": "FR",
-    "videolist": "Liste des vidéos"
+    "videolist": "Liste des vidéos",
+    "objectives": "objectifs"
   }
 }
