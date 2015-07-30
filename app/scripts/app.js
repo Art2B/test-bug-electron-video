@@ -56,8 +56,8 @@ var App = (function(my, Config){
       'controls': true,
       'autoplay': true,
       'preload': 'auto',
-      'width': 640,
-      'height': 360
+      'width': $videoHolder.width(),
+      'height': $videoHolder.height()
     });
   };
 
@@ -75,7 +75,8 @@ var App = (function(my, Config){
 
   my.initVideoPlay = function(){
     $(document).on('click', '.mini-video', function(event){
-      my.generateVideoPlayer($(event.target).data('url'), $('.video-holder'));
+      my.openPopup();
+      my.generateVideoPlayer($(event.target).data('url'), $('.popup'));
     });
   };
   my.initBtnGlobalEvents = function(){
@@ -90,15 +91,12 @@ var App = (function(my, Config){
       my.generateVideoPlayer(String(Config.videoPath+objVideo.file), $('.popup'));
       my.player.play();
     });
-    $(document).on('click', function(event){
-      if(my.isPopupOpen && $(event.target).closest('.popup').length < 1 && !$(event.target).is('.js-objectives')){
-        my.closePopup();
-      }
-    });
+    $(document).on('click', '.popup .close', function(event){
+      my.closePopup();
+    })
   };
 
 	my.init = function(){
-		console.log('App init');
     my.generateVideos();
     my.initVideoPlay();
 		my.translationInit();

@@ -65,6 +65,17 @@ header .objectifs {
 .popup.open {
   display: block;
 }
+.popup .close {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  display: block;
+  background: indianred;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  z-index: 10;
+}
 
 /* =====================
       FOOTER
