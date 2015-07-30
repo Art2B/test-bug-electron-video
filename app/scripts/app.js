@@ -1,5 +1,6 @@
 var App = (function(my, Config){
   my.player;
+  my.isPopupOpen = false;
 
 	my.translationInit = function(){
     i18n.init({lng: Config.languages[0]}, function(err, t) {
@@ -26,6 +27,9 @@ var App = (function(my, Config){
 
   my.generateVideos = function(){
     VideoDatas.forEach(function(element, index){
+      if(element.hide){
+        return;
+      }
       $('<li/>',{
         id: 'video'+index,
         class: 'mini-video',
@@ -36,32 +40,60 @@ var App = (function(my, Config){
       }).appendTo('.video-list');
     });
   };
+  my.generateVideoPlayer = function(videoUrl, $videoHolder){
+    if(my.player !== undefined){
+      if(window.location.origin+videoUrl === my.player.L.currentSrc){
+        return false;
+      }
+      my.player.dispose();
+    }
+    $('<video/>', {
+      id: 'currentVideo',
+      class: 'video-js vjs-default-skin',
+      src: videoUrl
+    }).appendTo($videoHolder);
+    my.player = videojs('#currentVideo', {
+      'controls': true,
+      'autoplay': true,
+      'preload': 'auto',
+      'width': 640,
+      'height': 360
+    });
+  };
+
+  my.openPopup = function(){
+    my.isPopupOpen = true;
+    $('.popup').addClass('open');
+  };
+  my.closePopup = function(){
+    my.isPopupOpen = false;
+    $('.popup').removeClass('open');
+    // Stop player when close popup
+    my.player.pause();
+    my.player.currentTime(0);
+  };
 
   my.initVideoPlay = function(){
     $(document).on('click', '.mini-video', function(event){
-      if(my.player !== undefined){
-        if(window.location.origin+$(event.target).data('url') === my.player.L.currentSrc){
-          return false;
-        }
-        my.player.dispose();
-      }
-      $('<video/>', {
-        id: 'currentVideo',
-        class: 'video-js vjs-default-skin',
-        src: $(event.target).data('url')
-      }).appendTo('.video-holder');
-      my.player = videojs('#currentVideo', {
-        'controls': true,
-        'autoplay': true,
-        'preload': 'auto',
-        'width': 640,
-        'height': 360
-      });
+      my.generateVideoPlayer($(event.target).data('url'), $('.video-holder'));
     });
   };
   my.initBtnGlobalEvents = function(){
     $(document).on('click', '.btn', function(event) {
       $(event.target).blur();
+    });
+    $(document).on('click', '.js-objectives', function(event){
+      my.openPopup();
+      var objVideo = _.find(VideoDatas, function(obj){
+        return obj.slug == 'ojectives';
+      });
+      my.generateVideoPlayer(String(Config.videoPath+objVideo.file), $('.popup'));
+      my.player.play();
+    });
+    $(document).on('click', function(event){
+      if(my.isPopupOpen && $(event.target).closest('.popup').length < 1 && !$(event.target).is('.js-objectives')){
+        my.closePopup();
+      }
     });
   };
 

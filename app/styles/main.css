@@ -49,6 +49,22 @@ header .objectifs {
   float: right;
   margin: 20px 20px 0 0;
 }
+/* =====================
+      POPUP
+====================== */
+.popup {
+  display: none;
+  height: 80%;
+  width: 80%;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  background: seagreen;
+  z-index: 999;
+}
+.popup.open {
+  display: block;
+}
 
 /* =====================
       FOOTER
@@ -78,6 +94,10 @@ footer .lang  span{
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  -webkit-transition: all 250ms ease;
+  -moz-transition: all 250ms ease;
+  -o-transition: all 250ms ease;
+  transition: all 250ms ease;
 }
 footer .lang span.active {
   width: 104px;

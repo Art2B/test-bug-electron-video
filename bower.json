@@ -2,10 +2,10 @@
   "name": "coke-video",
   "private": true,
   "dependencies": {
-    "modernizr": "~2.8.3"
+    "modernizr": "~2.8.3",
+    "underscore": "~1.8.3"
   },
-  "overrides": {
-  },
+  "overrides": {},
   "devDependencies": {
     "chai": "~3.2.0",
     "mocha": "~2.2.5"
