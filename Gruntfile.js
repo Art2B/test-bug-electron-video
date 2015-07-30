@@ -358,9 +358,8 @@ module.exports = function (grunt) {
         'imagemin',
         'svgmin'
       ]
-    }
+    },
   });
-
 
   grunt.registerTask('serve', 'start the server and preview your app', function (target) {
 

@@ -1,4 +1,4 @@
 var Config = {
-	videoPath: '/videos/',
+	videoPath: './videos/',
   languages: ['en', 'fr']
 };

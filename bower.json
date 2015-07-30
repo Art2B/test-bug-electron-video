@@ -2,7 +2,6 @@
   "name": "coke-video",
   "private": true,
   "dependencies": {
-    "modernizr": "~2.8.3",
     "underscore": "~1.8.3"
   },
   "overrides": {},

@@ -93,10 +93,11 @@ var App = (function(my, Config){
     });
     $(document).on('click', '.popup .close', function(event){
       my.closePopup();
-    })
+    });
   };
 
 	my.init = function(){
+    console.log('App init');
     my.generateVideos();
     my.initVideoPlay();
 		my.translationInit();

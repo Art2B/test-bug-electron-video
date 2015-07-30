@@ -16,15 +16,12 @@
     <!-- endbuild -->
     <!-- Custom vendors -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-    <!-- build:js scripts/vendor/modernizr.js -->
-    <script src="bower_components/modernizr/modernizr.js"></script>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/main.css">
     <!-- endbuild -->
 
-    <link href="//vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
-    <script src="//vjs.zencdn.net/4.12/video.js"></script>
+    <link href="./styles/vendors/video-js.css" rel="stylesheet">
+    <script src="./scripts/vendors/video.dev.js"></script>
   </head>
   <body>
     <!--[if lt IE 10]>
@@ -44,7 +41,7 @@
       <footer>
         <div id="js-i18n-holder" class="lang"></div>
         <div class="logos">
-          <img src="/assets/images/logos.png" alt="Coca-Cola Euro 2016 logos">
+          <img src="./assets/images/logos.png" alt="Coca-Cola Euro 2016 logos">
         </div>
       </footer>
     </div>
@@ -56,22 +53,21 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="/bower_components/modernizr/modernizr.js"></script>
     <script src="/bower_components/underscore/underscore.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="./../bower_components/jquery/dist/jquery.min.js"></script>
     
     <!-- Custome vendors -->
-    <script src="scripts/vendors/i18next.min.js"></script>
+    <script src="./scripts/vendors/i18next.min.js"></script>
     
     <!-- Custom Datas -->
-    <script src="data/videos.js"></script>
+    <script src="./data/videos.js"></script>
 
     <!-- build:js scripts/main.js -->
-    <script src="scripts/config.js"></script>
-    <script src="scripts/app.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="./scripts/config.js"></script>
+    <script src="./scripts/app.js"></script>
+    <script src="./scripts/main.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
