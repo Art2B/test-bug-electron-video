@@ -127,7 +127,7 @@ main {
   display: block;
   height: 710px;
   width: 1265px;
-  background-image: url('/assets/images/map.png');
+  background-image: url('./../assets/images/map.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -152,7 +152,7 @@ main {
   position: absolute;
   bottom: 0;
   right: 0;
-  background-image: url('/assets/images/after_text.png');
+  background-image: url('./../assets/images/after_text.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -243,7 +243,7 @@ main {
   width: 171px;
   cursor: pointer;
   z-index: 10;
-  background-image: url('/assets/images/popup_close_sprite.png');
+  background-image: url('./../assets/images/popup_close_sprite.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 100% 0;

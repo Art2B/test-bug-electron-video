@@ -13,8 +13,21 @@ Download some videos, put them in the `app/videos/` folder. Then advise `app/dat
 ```javascript
 // Data video object example
 {
+slug: 'slug_of_video',
 name: 'name_of_video',
 file: 'filename.extansion',
-type: 'MIME type of video'
+type: 'MIME type of video' // ex: 'video/mp4'
 }
 ```
+
+Next in `index.html`, change the `data-videoslug` to make them match with your videos.
+
+## Build instruction
+We use electron to build the app.
+1. Download prebuilt binaries for your platform from [here](https://github.com/atom/electron/releases) and extract here somewhere
+2. Make sur every relative path in the app start with `./` and then follow a relative path from the file
+3. Use [asar](https://www.npmjs.com/package/asar) to pack the project folder (ex: `/coke-video`) with `asar pack /path/to/project`
+4. Follow instructions you will found [there](http://electron.atom.io/docs/v0.30.0/tutorial/application-distribution/#packaging-your-app-into-a-file) with your asar file
+5. Well done, your app is now built :-) !
+
+Coming soon: Build electron app with Grunt
