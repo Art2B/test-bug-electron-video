@@ -92,7 +92,7 @@ var App = (function(my, Config){
       my.generateVideoPlayer(String(Config.videoPath+objVideo.file), $('.popup'));
       my.player.play();
     });
-    $(document).on('click', '.popup .close', function(event){
+    $(document).on('click', '.popup .close, .popup-overlay', function(event){
       my.closePopup();
     });
 
