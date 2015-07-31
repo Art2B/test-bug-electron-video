@@ -39,9 +39,9 @@ var App = (function(my, Config){
     }).appendTo($videoHolder);
     my.player = videojs('#currentVideo', {
       'controls': true,
-      'autoplay': false,
+      'autoplay': true,
       'preload': 'auto',
-      'poster': '/assets/images/videoPoster.png',
+      'poster': './assets/images/videoPoster.png',
       'width': $videoHolder.width(),
       'height': $videoHolder.height()
     });
