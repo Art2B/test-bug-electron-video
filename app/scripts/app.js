@@ -4,7 +4,7 @@ var App = (function(my, Config){
 
 	my.translationInit = function(){
     i18n.init({lng: Config.languages[0]}, function(err, t) {
-      $('[data-lang="'+Config.languages[0]+'"]').addClass('active');
+      $('[data-lang="'+Config.languages[1]+'"]').addClass('active');
       $("body").i18n();
     });
 
@@ -17,8 +17,8 @@ var App = (function(my, Config){
     });
 
     $(document).on('click', '.lang-select', function(event){
-      $('.lang-select').removeClass('active');
-      $(this).addClass('active');
+      $('.lang-select').addClass('active');
+      $(this).removeClass('active');
       $.i18n.setLng($(event.target).data('lang'), function(t) {
         $("body").i18n();
       });
