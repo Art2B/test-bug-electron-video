@@ -56,7 +56,7 @@ var App = (function(my, Config){
       'controls': true,
       'autoplay': false,
       'preload': 'auto',
-      'poster': '/assets/images/videoPoster.jpg',
+      'poster': '/assets/images/videoPoster.png',
       'width': $videoHolder.width(),
       'height': $videoHolder.height()
     });

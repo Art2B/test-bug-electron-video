@@ -47,7 +47,7 @@ html, body {
       VIDEOJS
 ====================== */
 .vjs-poster {
-  background-size: cover;
+  background-size: auto;
 }
 .vjs-default-skin .vjs-control-bar {
   background: #ab0e15;
@@ -57,6 +57,9 @@ html, body {
 }
 .vjs-default-skin .vjs-slider {
   background: none;
+}
+.vjs-default-skin .vjs-progress-control {
+  font-size: 0.9em;
 }
 .vjs-default-skin .vjs-play-progress {
   background: white;
@@ -74,10 +77,18 @@ html, body {
 .vjs-default-skin .vjs-fullscreen-control {
   opacity: 0;
 }
+.vjs-default-skin .vjs-play-control, .vjs-default-skin .vjs-mute-control,  .vjs-default-skin .vjs-volume-control{
+  top: 2px;
+}
+.vjs-default-skin .vjs-current-time, .vjs-time-divider, .vjs-default-skin .vjs-duration {
+  font-size: 1.5em;
+  line-height: 2.2em;
+}
 .vjs-default-skin .vjs-control {
   width: 6em;
   color: white;
   font-family: "Zheldor";
+  /*font-size: .9em;*/
 }
 .vjs-default-skin.vjs-has-started.vjs-user-inactive.vjs-playing .vjs-control-bar {
   visibility: visible !important;
@@ -152,7 +163,7 @@ main {
 }
 .map-holder #parking:after {
   bottom: 7px;
-  right: -65px;
+  right: -66px;
 }
 .map-holder #conso {
   height: 100px;
@@ -179,7 +190,7 @@ main {
 }
 .map-holder #offre:after {
   bottom: -10px;
-  right: -30px;
+  right: -32px;
 }
 .map-holder #allee {
   height: 90px;
@@ -204,11 +215,13 @@ main {
   left: 0; right: 0;
   margin: auto;
   z-index: 999;
+  border: 5px solid #ab0e15;
+  border-radius: 10px;
 }
 .popup-overlay {
   height: 100%;
   width: 100%;
-  background: rgba(255,255,255,0.5);
+  background: rgba(0,0,0,0.5);
   z-index: 888;
   position: absolute;
   top: 0;
