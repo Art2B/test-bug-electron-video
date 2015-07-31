@@ -2,7 +2,8 @@
   -webkit-user-select: none;  /* Chrome all / Safari all */
   -moz-user-select: none;     /* Firefox all */
   -ms-user-select: none;      /* IE 10+ */
-  user-select: none;          /* Likely future */      
+  user-select: none;          /* Likely future */
+  font-family: "Zheldor";
 }
 html, body {
   height: 100%;
@@ -15,14 +16,14 @@ html, body {
   width: 100%;
 }
 .active {
-  color: red;
+  color: #cc0020;
 }
 .btn {
   height: 80px;
   width: auto;
   border-radius: 10px; 
   font-size: 42px;
-  line-height: 80px;
+  line-height: 75px;
   color: white;
   text-transform: uppercase;
   outline: none;
@@ -43,10 +44,54 @@ html, body {
   opacity: 0.5;
 }
 /* =====================
+      VIDEOJS
+====================== */
+.vjs-poster {
+  background-size: cover;
+}
+.vjs-default-skin .vjs-control-bar {
+  background: #ab0e15;
+}
+.vjs-default-skin .vjs-big-play-button {
+  display: none;
+}
+.vjs-default-skin .vjs-slider {
+  background: none;
+}
+.vjs-default-skin .vjs-play-progress {
+  background: white;
+}
+.vjs-default-skin .vjs-load-progress {
+  background: #ab0e15;
+  opacity: 0.5;
+}
+.vjs-default-skin .vjs-volume-level {
+  background: white;
+}
+.vjs-default-skin .vjs-volume-bar {
+  background: #c90422;
+}
+.vjs-default-skin .vjs-fullscreen-control {
+  opacity: 0;
+}
+.vjs-default-skin .vjs-control {
+  width: 6em;
+  color: white;
+  font-family: "Zheldor";
+}
+.vjs-default-skin.vjs-has-started.vjs-user-inactive.vjs-playing .vjs-control-bar {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transition-duration: 0s!important;
+}
+/* =====================
       HEADER
 ====================== */
 header {
-
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 header .objectifs {
   float: right;
@@ -60,16 +105,84 @@ header .objectifs {
   -webkit-touch-callout: none;
 }
 /* =====================
+      MAP
+====================== */
+main {
+  height: 100%;
+  width: 100%;
+}
+
+.map-holder {
+  display: block;
+  height: 710px;
+  width: 1265px;
+  background-image: url('/assets/images/map.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  margin: auto;
+  position: relative;
+  top: 280px;
+}
+
+.map-holder p {
+  color: #cc0020;
+  font-size: 54px;
+  line-height: 54px;
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+}
+.map-holder p:after {
+  content: '';
+  height: 35px;
+  width: 59px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-image: url('/assets/images/after_text.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.map-holder #parking {
+  bottom: 157px;
+  left: -200px;
+}
+.map-holder #conso {
+  height: 93px;
+  width: 332px;
+  top: 310px;
+  left: -306px;
+}
+.map-holder #rayon {
+  top: 41px;
+  left: -82px;
+}
+.map-holder #offre {
+  height: 90px;
+  width: 293px;
+  top: -110px;
+  left: 285px;
+}
+.map-holder #allee {
+  height: 90px;
+  width: 207px;
+  top: -27px;
+  right: 119px;
+}
+/* =====================
       POPUP
 ====================== */
 .popup {
   display: none;
-  height: 80%;
-  width: 80%;
+  height: 733px;
+  width: 1293px;
   position: absolute;
-  top: 10%;
-  left: 10%;
-  background: seagreen;
+  top: 0;
+  bottom: 0;
+  left: 0; right: 0;
+  margin: auto;
   z-index: 999;
 }
 .popup-overlay {

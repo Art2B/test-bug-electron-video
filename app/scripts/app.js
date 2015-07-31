@@ -54,8 +54,9 @@ var App = (function(my, Config){
     }).appendTo($videoHolder);
     my.player = videojs('#currentVideo', {
       'controls': true,
-      'autoplay': true,
+      'autoplay': false,
       'preload': 'auto',
+      'poster': '/assets/images/videoPoster.jpg',
       'width': $videoHolder.width(),
       'height': $videoHolder.height()
     });
@@ -90,7 +91,6 @@ var App = (function(my, Config){
         return obj.slug == 'ojectives';
       });
       my.generateVideoPlayer(String(Config.videoPath+objVideo.file), $('.popup'));
-      my.player.play();
     });
     $(document).on('click', '.popup .close, .popup-overlay', function(event){
       my.closePopup();
@@ -107,7 +107,7 @@ var App = (function(my, Config){
 
 	my.init = function(){
     console.log('App init');
-    my.generateVideos();
+    // my.generateVideos();
     my.initVideoPlay();
 		my.translationInit();
     my.initBtnGlobalEvents();

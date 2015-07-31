@@ -15,14 +15,14 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- Custom vendors -->
+    <link href="./styles/vendors/video-js.css" rel="stylesheet">
+    <script src="./scripts/vendors/video.dev.js"></script>
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/fonts/zheldor.css">
     <link rel="stylesheet" href="./styles/main.css">
     <!-- endbuild -->
 
-    <link href="./styles/vendors/video-js.css" rel="stylesheet">
-    <script src="./scripts/vendors/video.dev.js"></script>
   </head>
   <body>
     <!--[if lt IE 10]>
@@ -35,9 +35,13 @@
         <button class="btn objectifs js-objectives" data-i18n="app.objectives"></button>
       </header>
       <main>
-        <p data-i18n="app.videolist"></p>
-        <ul class="video-list"></ul>
-        <div class="video-holder"></div>
+        <div class="map-holder">
+          <p data-i18n="videos.parking" id="parking"></p>
+          <p data-i18n="videos.conso" id="conso"></p>
+          <p data-i18n="videos.rayon" id="rayon"></p>
+          <p data-i18n="videos.offre" id="offre"></p>
+          <p data-i18n="videos.allee" id="allee"></p>
+        </div>
       </main>
       <footer>
         <div id="js-i18n-holder" class="lang"></div>

@@ -3,5 +3,12 @@
     "langTag": "FR",
     "videolist": "Liste des vidéos",
     "objectives": "objectifs"
+  },
+  "videos": {
+    "parking": "Parking",
+    "conso": "Consommation immediate",
+    "rayon": "Rayon",
+    "offre": "Offre solide et liquide",
+    "allee": "Allee centrale"
   }
 }

@@ -3,5 +3,12 @@
     "langTag": "EN",
     "videolist": "Video list",
     "objectives": "objectives"
+  },
+  "videos": {
+    "parking": "Parking",
+    "conso": "Consommation immediate DEV",
+    "rayon": "Rayon DEV",
+    "offre": "Offre solide et liquide DEV",
+    "allee": "Allee centrale DEV"
   }
 }
