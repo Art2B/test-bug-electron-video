@@ -25,7 +25,8 @@ var App = (function(my, Config){
     });
 	};
 
-  my.generateVideoPlayer = function(videoUrl, $videoHolder){
+  my.generateVideoPlayer = function(videoUrl, $videoHolder, options){
+    options = options || {};
     if(my.player !== undefined){
       if(window.location.origin+videoUrl === my.player.currentSrc){
         return false;
@@ -46,8 +47,13 @@ var App = (function(my, Config){
       'height': $videoHolder.height()
     });
     my.player.on('ended', function(){
-      my.closePopup();
-    })
+      if(options.loop == true){
+        my.player.currentTime(options.loopAt);
+        my.player.play();
+      } else {
+        my.closePopup();
+      }
+    });
   };
 
   my.openPopup = function(){
@@ -82,7 +88,7 @@ var App = (function(my, Config){
       var objVideo = _.find(VideoDatas, function(obj){
         return obj.slug == 'ojectives';
       });
-      my.generateVideoPlayer(String(Config.videoPath+objVideo.file), $('.popup'));
+      my.generateVideoPlayer(String(Config.videoPath+objVideo.file), $('.popup'), {loop: true, loopAt: 1});
     });
     $(document).on('click', '.popup .close, .popup-overlay', function(event){
       my.closePopup();
@@ -94,6 +100,14 @@ var App = (function(my, Config){
     })
     $(document).on('touchend touchcancel mouseup', '.onclick',function(event){
       $(this).removeClass('onclick');
+    });
+    $(document).on('touchend touchcancel mouseup', 'video', function(event){
+      if (my.player.paused()) {
+        my.player.play();
+      }
+      else {
+        my.player.pause();
+      }
     });
   };
 
