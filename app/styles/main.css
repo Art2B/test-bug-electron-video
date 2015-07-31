@@ -75,10 +75,11 @@ html, body {
 .vjs-default-skin .vjs-volume-bar {
   background: #c90422;
 }
-.vjs-default-skin .vjs-fullscreen-control {
-  opacity: 0;
+.vjs-default-skin .vjs-fullscreen-control, .vjs-default-skin .vjs-mute-control, .vjs-default-skin .vjs-volume-control {
+  display: none;
 }
-.vjs-default-skin .vjs-play-control, .vjs-default-skin .vjs-mute-control,  .vjs-default-skin .vjs-volume-control{
+
+.vjs-default-skin .vjs-play-control{
   top: 2px;
 }
 .vjs-default-skin .vjs-current-time, .vjs-time-divider, .vjs-default-skin .vjs-duration {
