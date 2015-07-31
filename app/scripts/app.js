@@ -23,6 +23,13 @@ var App = (function(my, Config){
         $("body").i18n();
       });
     });
+
+    $(document).on('touchstart mousedown', '.lang-select', function(event){
+      $(event.target).addClass('onclick');
+    });
+    $(document).on('touchend touchcancel mouseup', function(event){
+      $('.lang-select').removeClass('onclick');
+    });
 	};
 
   my.generateVideos = function(){
