@@ -32,12 +32,15 @@ html, body {
   cursor: pointer;
 }
 .btn:focus {
-  border-bottom: 4px solid #ab0f15;
+  outline: none;
 }
 .clearfix:after {
   content: "";
   display: table;
   clear: both;
+}
+.onclick {
+  opacity: 0.5;
 }
 /* =====================
       HEADER
@@ -49,6 +52,12 @@ header .objectifs {
   float: right;
   margin: 20px 20px 0 0;
   padding: 0 20px;
+  -webkit-transition: all 250ms ease;
+  -moz-transition: all 250ms ease;
+  -o-transition: all 250ms ease;
+  transition: all 250ms ease;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
 }
 /* =====================
       POPUP
@@ -63,7 +72,20 @@ header .objectifs {
   background: seagreen;
   z-index: 999;
 }
+.popup-overlay {
+  height: 100%;
+  width: 100%;
+  background: rgba(255,255,255,0.5);
+  z-index: 888;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
 .popup.open {
+  display: block;
+}
+.popup.open + .popup-overlay{
   display: block;
 }
 .popup .close {
@@ -149,9 +171,6 @@ footer .lang span.active {
   text-indent: 20px;
   font-size: 39px;
   display: inline-block;
-}
-footer .lang span.onclick {
-  opacity: 0.2;
 }
 footer .logos {
   float: right;

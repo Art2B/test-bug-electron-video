@@ -23,13 +23,6 @@ var App = (function(my, Config){
         $("body").i18n();
       });
     });
-
-    $(document).on('touchstart mousedown', '.lang-select', function(event){
-      $(event.target).addClass('onclick');
-    });
-    $(document).on('touchend touchcancel mouseup', function(event){
-      $('.lang-select').removeClass('onclick');
-    });
 	};
 
   my.generateVideos = function(){
@@ -49,7 +42,7 @@ var App = (function(my, Config){
   };
   my.generateVideoPlayer = function(videoUrl, $videoHolder){
     if(my.player !== undefined){
-      if(window.location.origin+videoUrl === my.player.L.currentSrc){
+      if(window.location.origin+videoUrl === my.player.currentSrc){
         return false;
       }
       my.player.dispose();
@@ -91,6 +84,7 @@ var App = (function(my, Config){
       $(event.target).blur();
     });
     $(document).on('click', '.js-objectives', function(event){
+
       my.openPopup();
       var objVideo = _.find(VideoDatas, function(obj){
         return obj.slug == 'ojectives';
@@ -100,6 +94,14 @@ var App = (function(my, Config){
     });
     $(document).on('click', '.popup .close', function(event){
       my.closePopup();
+    });
+
+    // Add onclick animations
+    $(document).on('touchstart mousedown', '.js-objectives, .lang-select', function(){
+      $(this).addClass('onclick');
+    })
+    $(document).on('touchend touchcancel mouseup', '.onclick',function(event){
+      $(this).removeClass('onclick');
     });
   };
 
