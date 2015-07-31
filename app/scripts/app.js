@@ -45,8 +45,8 @@ var App = (function(my, Config){
       'width': $videoHolder.width(),
       'height': $videoHolder.height()
     });
-    my.player.pause(function(){
-      console.log('video end');
+    my.player.on('ended', function(){
+      my.closePopup();
     })
   };
 
