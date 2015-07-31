@@ -89,8 +89,6 @@ html, body {
 .vjs-default-skin .vjs-control {
   width: 6em;
   color: white;
-  font-family: "Zheldor";
-  /*font-size: .9em;*/
 }
 .vjs-default-skin.vjs-has-started.vjs-user-inactive.vjs-playing .vjs-control-bar {
   visibility: visible !important;
