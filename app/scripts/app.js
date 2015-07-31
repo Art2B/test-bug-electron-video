@@ -25,21 +25,6 @@ var App = (function(my, Config){
     });
 	};
 
-  my.generateVideos = function(){
-    VideoDatas.forEach(function(element, index){
-      if(element.hide){
-        return;
-      }
-      $('<li/>',{
-        id: 'video'+index,
-        class: 'mini-video',
-        'data-url': Config.videoPath+element.file,
-        'data-type': element.type,
-        'data-name': element.name,
-        text: element.name
-      }).appendTo('.video-list');
-    });
-  };
   my.generateVideoPlayer = function(videoUrl, $videoHolder){
     if(my.player !== undefined){
       if(window.location.origin+videoUrl === my.player.currentSrc){
@@ -101,7 +86,7 @@ var App = (function(my, Config){
     });
 
     // Add onclick animations
-    $(document).on('touchstart mousedown', '.js-objectives, .lang-select, .map-holder p', function(){
+    $(document).on('touchstart mousedown', '.js-objectives, .lang-select, .map-holder p, .close', function(){
       $(this).addClass('onclick');
     })
     $(document).on('touchend touchcancel mouseup', '.onclick',function(event){
@@ -111,7 +96,6 @@ var App = (function(my, Config){
 
 	my.init = function(){
     console.log('App init');
-    // my.generateVideos();
     my.initVideoPlay();
 		my.translationInit();
     my.initBtnGlobalEvents();

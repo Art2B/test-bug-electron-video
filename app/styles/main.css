@@ -19,15 +19,16 @@ html, body {
   color: #cc0020;
 }
 .btn {
-  height: 80px;
+  height: 70px;
   width: auto;
   border-radius: 10px; 
-  font-size: 42px;
-  line-height: 75px;
+  font-size: 36px;
+  line-height: 65px;
   color: white;
   text-transform: uppercase;
   outline: none;
   border: none;
+  padding: 0 67px;
   background: #cc001f;
   border-bottom: 7px solid #ab0f15;
   cursor: pointer;
@@ -106,8 +107,7 @@ header {
 }
 header .objectifs {
   float: right;
-  margin: 20px 20px 0 0;
-  padding: 0 20px;
+  margin: 10px 10px 0 0;
   -webkit-transition: all 250ms ease;
   -moz-transition: all 250ms ease;
   -o-transition: all 250ms ease;
@@ -236,17 +236,23 @@ main {
 }
 .popup .close {
   position: absolute;
-  top: -40px;
-  right: -50px;
+  top: -72px;
+  right: -140px;
   display: block;
   height: 119px;
   width: 171px;
   cursor: pointer;
   z-index: 10;
-  background-image: url('/assets/images/popup_close.png');
+  background-image: url('/assets/images/popup_close_sprite.png');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position: 100% 0;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+}
+.popup .close.onclick {
+  opacity: 1;
+  background-position: 0% 0%;
 }
 
 /* =====================
@@ -298,5 +304,6 @@ footer .lang span.active {
   display: inline-block;
 }
 footer .logos {
+  margin-right: 30px;
   float: right;
 }
