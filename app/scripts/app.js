@@ -75,9 +75,13 @@ var App = (function(my, Config){
   };
 
   my.initVideoPlay = function(){
-    $(document).on('click', '.mini-video', function(event){
+    $(document).on('click', '.map-holder p', function(event){
       my.openPopup();
-      my.generateVideoPlayer($(event.target).data('url'), $('.popup'));
+      var slug = $(this).data('videoslug');
+      var currentObj = _.find(VideoDatas, function(video){
+        return video.slug == slug;
+      });
+      my.generateVideoPlayer(String(Config.videoPath+currentObj.file), $('.popup'));
     });
   };
   my.initBtnGlobalEvents = function(){
