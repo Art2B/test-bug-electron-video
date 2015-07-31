@@ -97,7 +97,7 @@ var App = (function(my, Config){
     });
 
     // Add onclick animations
-    $(document).on('touchstart mousedown', '.js-objectives, .lang-select', function(){
+    $(document).on('touchstart mousedown', '.js-objectives, .lang-select, .map-holder p', function(){
       $(this).addClass('onclick');
     })
     $(document).on('touchend touchcancel mouseup', '.onclick',function(event){
