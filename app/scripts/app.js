@@ -75,7 +75,7 @@ var App = (function(my, Config){
       var currentObj = _.find(VideoDatas, function(video){
         return video.slug == slug;
       });
-      my.generateVideoPlayer(String(Config.videoPath+currentObj.file), $('.popup'));
+      my.generateVideoPlayer(String(Config.videoPath+currentObj.files[i18n.lng()]), $('.popup'));
     });
   };
   my.initBtnGlobalEvents = function(){
