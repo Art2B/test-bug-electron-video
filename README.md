@@ -15,7 +15,10 @@ Download some videos, put them in the `app/videos/` folder. Then advise `app/dat
 {
 slug: 'slug_of_video',
 name: 'name_of_video',
-file: 'filename.extansion',
+file: {
+  lang: 'filename.extansion', // Replace lang by the lang you'll use in i18n
+  lang: 'filename.extansion',
+},
 type: 'MIME type of video' // ex: 'video/mp4'
 }
 ```
