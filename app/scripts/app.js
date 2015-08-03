@@ -88,7 +88,7 @@ var App = (function(my, Config){
       var objVideo = _.find(VideoDatas, function(obj){
         return obj.slug == 'ojectives';
       });
-      my.generateVideoPlayer(String(Config.videoPath+objVideo.file), $('.popup'), {loop: true, loopAt: 1});
+      my.generateVideoPlayer(String(Config.videoPath+objVideo.files[i18n.lng()]), $('.popup'), {loop: true, loopAt: 1});
     });
     $(document).on('click', '.popup .close, .popup-overlay', function(event){
       my.closePopup();
@@ -101,7 +101,7 @@ var App = (function(my, Config){
     $(document).on('touchend touchcancel mouseup', '.onclick',function(event){
       $(this).removeClass('onclick');
     });
-    $(document).on('touchend touchcancel mouseup', 'video', function(event){
+    $(document).on('touchend touchcancel', 'video', function(event){
       if (my.player.paused()) {
         my.player.play();
       }
