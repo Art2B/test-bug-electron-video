@@ -47,6 +47,9 @@ html, body {
 /* =====================
       VIDEOJS
 ====================== */
+.video-js {
+  background-color: #ab0e15;
+}
 .vjs-poster {
   background-size: auto;
 }
