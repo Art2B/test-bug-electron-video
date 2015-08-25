@@ -33,4 +33,4 @@ We use electron to build the app.
 4. Follow instructions you will found [there](http://electron.atom.io/docs/v0.30.0/tutorial/application-distribution/#packaging-your-app-into-a-file) with your asar file
 5. Well done, your app is now built :-) !
 
-Coming soon: Build electron app with Grunt
+Don't forget to add your videos `parking.mp4` and `objectifs.mp4` to the `app/videos` folder you'll have to create :-)
