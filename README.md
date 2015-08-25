@@ -1,9 +1,9 @@
-#Coke Video
+#Hey Video
 
 A client to run some videos
 
 ## Installation
-1. Clone the project && `cd coke-video`
+1. Clone the project && `cd test-bug-electron-video`
 2. `npm intall`
 3. `grunt serve`. Now your site is available at `localhost:9000`
 
